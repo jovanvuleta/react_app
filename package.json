@@ -1,0 +1,33 @@
+{
+  "name": "react_app",
+  "version": "1.0.0",
+  "description": "Default react app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jocavuleta/react_app.git"
+  },
+  "author": "jv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jocavuleta/react_app/issues"
+  },
+  "homepage": "https://github.com/jocavuleta/react_app#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "html-webpack-plugin": "^4.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7"
+  }
+}
