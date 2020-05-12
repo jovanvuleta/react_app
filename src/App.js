@@ -8,6 +8,11 @@ import { Form } from './components/Form/Form';
 
 import { Communicators } from './Communicators';
 
+import { connect } from 'react-redux';
+
+import * as actionTypes from './store/ActionTypes';
+import { waitAndUpdateAge } from './store/ActionCreators';
+
 class App extends Component {
     //1
     constructor(props) {
@@ -24,6 +29,11 @@ class App extends Component {
 
     componentDidMount() {
         this.fetchData();
+        this.props.onAgeUpdate(43);
+    }
+
+    componentDidUpdate() {
+        console.log(this.props.age, this.props.name);
     }
 
     // componentDidUpdate(prevProps, prevState) {
@@ -138,5 +148,17 @@ class App extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        age: state.age,
+        name: state.name
+    }
+}
 
-export default App;
+const mapDispatchToProps = dispatch => {
+    return {
+        onAgeUpdate: age => dispatch(waitAndUpdateAge(age))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
